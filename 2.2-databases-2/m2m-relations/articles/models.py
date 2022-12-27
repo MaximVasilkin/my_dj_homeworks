@@ -33,3 +33,7 @@ class Scope(models.Model):
     scopes = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='tags')
     is_main = models.BooleanField()
 
+    class Meta:
+        ordering = ['-is_main']
+
+
