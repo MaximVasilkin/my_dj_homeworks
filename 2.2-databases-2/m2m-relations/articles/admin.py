@@ -6,19 +6,12 @@ from .models import Article, Tag, Scope
 
 class ScopeInlineFormset(BaseInlineFormSet):
     def clean(self):
-        is_main_found = False
+        list_of_true = []
         for form in self.forms:
-            # В form.cleaned_data будет словарь с данными
-            # каждой отдельной формы, которые вы можете проверить
-            is_main = form.cleaned_data.get('is_main', None)
-            if is_main:
-                is_main_found = is_main
-            elif is_main_found and is_main:
-            # вызовом исключения ValidationError можно указать админке о наличие ошибки
-            # таким образом объект не будет сохранен,
-            # а пользователю выведется соответствующее сообщение об ошибке
-                raise ValidationError('Тут всегда ошибка')
-        return super().clean()  # вызываем базовый код переопределяемого метода
+            list_of_true.append(form.cleaned_data.get('is_main', None))
+            if list_of_true.count(True) > 1 or list_of_true.count(True) < 1:
+                raise ValidationError('Главный тег может быть только один')
+        return super().clean()
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
