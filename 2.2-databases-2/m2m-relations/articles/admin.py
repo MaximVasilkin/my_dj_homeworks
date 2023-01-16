@@ -8,9 +8,10 @@ class ScopeInlineFormset(BaseInlineFormSet):
     def clean(self):
         list_of_true = []
         for form in self.forms:
+            print(form.cleaned_data)
             list_of_true.append(form.cleaned_data.get('is_main', None))
-            if list_of_true.count(True) > 1 or list_of_true.count(True) < 1:
-                raise ValidationError('Главный тег может быть только один')
+        if list_of_true.count(True) > 1 or list_of_true.count(True) < 1:
+            raise ValidationError('Главный тег может быть только один')
         return super().clean()
 
 @admin.register(Tag)

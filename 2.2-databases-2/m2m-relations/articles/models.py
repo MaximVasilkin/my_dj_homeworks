@@ -30,10 +30,10 @@ class Tag(models.Model):
 
 class Scope(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='scopes')
-    scopes = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='tags')
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='scopes')
     is_main = models.BooleanField()
 
     class Meta:
-        ordering = ['-is_main']
+        ordering = ['-is_main', '-tag']
 
 
