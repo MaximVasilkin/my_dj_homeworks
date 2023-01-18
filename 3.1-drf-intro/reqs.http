@@ -1,0 +1,32 @@
+POST http://localhost:8000/api/sensor/
+Content-Type: application/json
+
+{
+  "name": "my_sensor2",
+  "description": "desc"
+}
+
+###
+
+PUT http://localhost:8000/api/sensor/2/
+Content-Type: application/json
+
+{
+  "name": "MySensor2",
+  "description": "desc of my sensor"
+}
+
+###
+PATCH http://localhost:8000/api/sensor/1/
+Content-Type: application/json
+
+{
+  "temperature": 20.5
+}
+
+###
+GET http://localhost:8000/api/sensor/
+
+###
+GET http://localhost:8000/api/sensor/1/
+

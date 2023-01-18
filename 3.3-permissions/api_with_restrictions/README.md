@@ -17,7 +17,7 @@
 
 ## Реализация
 
-- используйте `DateFromToRangeFilter` для фильтрации по дате https://django-filter.readthedocs.io/en/master/ref/filters.html
+- используйте `DateFromToRangeFilter` для фильтрации по дате https://django-filter.readthedocs.io/en/stable/ref/filters.html#datefromtorangefilter
 
 Пример работы:
 ![Фильтрация по дате](./screenshots/date_filter.png)
@@ -48,6 +48,10 @@
     Любой вариант допустим в рамках данного задания.
 
 - С примерами запросов к API вы можете ознакомиться в [файле requests-examples.http](./requests-examples.http)
+
+# ВАЖНО
+
+Приложение называется `advertisements`, такие слова являются триггерами для блокировщиков рекламы (например, uBlock Origin). Рекомендуется отключить блокировщик, если вы пользуетесь таковым, либо переименовать приложение.
 
 ## Подсказки
 
