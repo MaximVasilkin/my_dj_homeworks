@@ -42,8 +42,8 @@ class AdvertisementSerializer(serializers.ModelSerializer):
         http_method = req.method
         open_status = 'OPEN'
         limit = 10
-        opened_advs = Advertisement.objects.filter(creator=creator, status=open_status)
+        count_opened_advs = Advertisement.objects.filter(creator=creator, status=open_status).count()
         data_status = data.get('status', '')
-        if (http_method == 'POST' or http_method == 'PATCH' and data_status == open_status) and len(opened_advs) >= limit:
+        if (http_method == 'POST' or http_method == 'PATCH' and data_status == open_status) and count_opened_advs >= limit:
             raise ValidationError(f'Нельзя иметь более {limit} открытых объявлений')
         return data
