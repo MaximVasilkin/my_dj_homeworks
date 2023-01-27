@@ -64,20 +64,20 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/4/
+PATCH {{baseUrl}}/stocks/1/
 Content-Type: application/json
 
 {
   "positions": [
     {
       "product": 2,
-      "quantity": 100,
-      "price": 130.80
+      "quantity": 222,
+      "price": 22
     },
     {
-      "product": 3,
-      "quantity": 243,
-      "price": 145
+      "product": 7,
+      "quantity": 77,
+      "price": 777
     }
   ]
 }
