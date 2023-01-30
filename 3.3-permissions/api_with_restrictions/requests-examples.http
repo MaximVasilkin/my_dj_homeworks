@@ -11,11 +11,11 @@ Content-Type: application/json
 # создание объявления
 POST {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token 661181c20a8884daed7f0a22e3ae028a3d232b4e
+Authorization: Token c7a2fc541c9acb80d5f35f84f83427642d342c5d
 
 {
-  "title": "Шкаф IKEA",
-  "description": "Срочно"
+  "title": "IKEA",
+  "description": "Не Срочно"
 }
 
 ###
@@ -39,7 +39,7 @@ Authorization: Token c7a2fc541c9acb80d5f35f84f83427642d342c5d
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=2
+GET {{baseUrl}}/advertisements/?creator=1
 Content-Type: application/json
 
 ###
