@@ -1,5 +1,4 @@
-from django.conf import settings
-from django_filters import rest_framework as filters, DateFromToRangeFilter, ModelChoiceFilter
+from django_filters import rest_framework as filters, DateFromToRangeFilter
 
 from advertisements.models import Advertisement
 
